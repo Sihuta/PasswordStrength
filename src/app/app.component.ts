@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'PasswordStrength';
+  password: string = '';
+  showPassword: boolean = false;
+
+  changePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
 }

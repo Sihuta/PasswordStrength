@@ -1,0 +1,35 @@
+.container {
+  padding: 20px 20px;
+}
+
+.pwd-group {
+  align-items: center;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.pwd-group input {
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px;
+  width: 350px;
+}
+
+.pwd-group img {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+.sections {
+  display: flex;
+  margin: 10px 0;
+}
+
+.section {
+  background-color: gray;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  width: 109px;
+}
