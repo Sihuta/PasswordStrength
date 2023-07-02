@@ -11,6 +11,7 @@ export class AppComponent {
   private readonly hasDigitsRegExp = /\d+/;
   private readonly hasLettersRegExp = /[a-zA-Z]+/
   private readonly hasSymbolsRegExp = /[ !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]+/;
+  private readonly defaultExplanation = 'It is empty';
 
   password: string = '';
   showPassword: boolean = false;
@@ -21,6 +22,8 @@ export class AppComponent {
   easySectionColor: string = '';
   mediumSectionColor: string = '';
   strongSectionColor: string = '';
+
+  explanation = this.defaultExplanation;
 
   constructor() {
     this.setSectionsColor(Colors.Gray);
@@ -37,18 +40,27 @@ export class AppComponent {
     if (val.length == 0) {
       this.result = Strength.None;
       this.setSectionsColor(Colors.Gray);
-    } else if (val.length < minLen) {
+      this.explanation = this.defaultExplanation;
+    }
+    else if (val.length < minLen) {
       this.result = Strength.None;
       this.setSectionsColor(Colors.Red);
-    } else if (this.passwordIsStrong(val)) {
+      this.explanation = 'It has less than 8 characters';
+    }
+    else if (this.passwordIsStrong(val)) {
       this.result = Strength.Strong;
       this.setSectionsColor(Colors.Green);
-    } else if (this.passwordIsMedium(val)) {
+      this.explanation = 'It has letters, symbols and numbers';
+    }
+    else if (this.passwordIsMedium(val)) {
       this.result = Strength.Medium;
       this.setSectionColors(Colors.Yellow, Colors.Yellow, Colors.Gray);
-    } else {
+      this.explanation = 'It has letters-symbols/letters-digits/digits-symbols';
+    }
+    else {
       this.result = Strength.Easy;
       this.setSectionColors(Colors.Red, Colors.Gray, Colors.Gray);
+      this.explanation = 'It has only letters/digits/symbols';
     }
   }
 

@@ -4,7 +4,8 @@
       [type]="showPassword ? 'text' : 'password'"
       [(ngModel)]="password"
       (ngModelChange)="passwordChanged($event)">
-    <img alt="Show/hide password"
+    <img class="icon"
+      alt="Show/hide password"
       src="assets/icons/{{ showPassword ? 'hide' : 'show' }}-pwd.svg"
       (click)="changePasswordVisibility()">
   </div>
@@ -13,5 +14,16 @@
     <div class="section" style="--color: {{ mediumSectionColor }}"></div>
     <div class="section" style="--color: {{ strongSectionColor }}"></div>
   </div>
-  <span>{{ strengthEnum[result] }}</span>
+  <div class="result-group">
+    <img class="icon"
+      src="assets/icons/info-icon.svg"
+      alt="Information icon"
+      mat-raised-icon
+      matTooltip="{{ explanation }}"
+      matTooltipPosition="below"
+      matTooltipClass="bar-info-tooltip"
+      matTooltipShowDelay="100"
+      matTooltipHideDelay="100">
+    <span>{{ strengthEnum[result] }}</span>
+  </div>
 </div>

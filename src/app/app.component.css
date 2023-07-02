@@ -15,7 +15,7 @@
   width: 350px;
 }
 
-.pwd-group img {
+.icon {
   cursor: pointer;
   height: 30px;
   width: 30px;
@@ -32,4 +32,14 @@
   border-radius: 5px;
   padding: 5px;
   width: 109px;
+}
+
+.result-group {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+}
+
+.result-group span {
+  margin-left: 5px;
 }
