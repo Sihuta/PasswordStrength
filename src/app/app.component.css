@@ -27,7 +27,7 @@
 }
 
 .section {
-  background-color: gray;
+  background-color: var(--color);
   border: 1px solid black;
   border-radius: 5px;
   padding: 5px;

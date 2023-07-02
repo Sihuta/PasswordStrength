@@ -1,14 +1,17 @@
 <div class="container">
   <div class="pwd-group">
     <input placeholder="Check your password strength"
-      [type]="showPassword ? 'text' : 'password'">
+      [type]="showPassword ? 'text' : 'password'"
+      [(ngModel)]="password"
+      (ngModelChange)="passwordChanged($event)">
     <img alt="Show/hide password"
       src="assets/icons/{{ showPassword ? 'hide' : 'show' }}-pwd.svg"
       (click)="changePasswordVisibility()">
   </div>
   <div class="sections">
-    <div class="section easy"></div>
-    <div class="section medium"></div>
-    <div class="section strong"></div>
+    <div class="section" style="--color: {{ easySectionColor }}"></div>
+    <div class="section" style="--color: {{ mediumSectionColor }}"></div>
+    <div class="section" style="--color: {{ strongSectionColor }}"></div>
   </div>
+  <span>{{ strengthEnum[result] }}</span>
 </div>
