@@ -1,0 +1,15 @@
+.icon {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+}
+
+.container span {
+  margin-left: 5px;
+}

@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  margin: 10px 0;
+}
+
+.section {
+  background-color: var(--color);
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  width: 109px;
+}
