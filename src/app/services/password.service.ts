@@ -15,7 +15,6 @@ export class PasswordService {
 
   updPasswordStrength(password: string): void {
     const minLen = 8;
-    password = password.trim();
 
     if (password.length == 0) {
       this.setPasswordStrength(Strength.None);
